@@ -131,15 +131,6 @@ Decision Trees offer several advantages:
 - Fast training and prediction
 - Robust to outliers
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit issues or pull requests.
-
-## Course Information
-
-**ESE 327 Project 2**  
-Developed as part of the ESE 327 coursework.
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.

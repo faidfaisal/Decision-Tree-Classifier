@@ -168,9 +168,4 @@ Decision Trees are used across a wide range of domains:
 
 ---
 
-## Author
-**Faid Faisal** — [faidfaisal1@gmail.com](mailto:faidfaisal1@gmail.com)
-
----
-
 *Licensed under the MIT License.*

@@ -166,6 +166,4 @@ Decision Trees are used across a wide range of domains:
 - Quinlan, J. R. (1986). Induction of decision trees. *Machine Learning*, 1(1), 81–106.
 - Breiman, L., Friedman, J., Stone, C. J., & Olshen, R. A. (1984). *Classification and Regression Trees.* CRC Press.
 
----
 
-*Licensed under the MIT License.*

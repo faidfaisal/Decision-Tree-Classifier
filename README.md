@@ -2,7 +2,7 @@
 
 > A lightweight C++ implementation of the Decision Tree algorithm for multi-class classification, supporting multiple splitting criteria and pruning.
 
-**Author:** Faid Faisal | Computer Engineering, Stony Brook University
+*Author:** Faid Faisal | Computer Engineering, Stony Brook University
 ---
 
 ## Table of Contents

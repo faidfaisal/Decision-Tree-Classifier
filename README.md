@@ -2,9 +2,7 @@
 
 > A lightweight C++ implementation of the Decision Tree algorithm for multi-class classification, supporting multiple splitting criteria and pruning.
 
-**Author:** Faid Faisal | Computer Engineering, Stony Brook University
 ---
-
 
 ## Table of Contents
 
@@ -85,9 +83,9 @@ g++ -std=c++11 -O2 -o decisiontree decision_tree.cpp
 
 | Argument | Required | Description |
 |:---|:---:|:---|
-| `training_file` | ✅ | Path to the training dataset (CSV) |
-| `test_file` | ✅ | Path to the test dataset for prediction (CSV) |
-| `output_file` | ❌ | Optional path to write results and tree structure |
+| `training_file` |  | Path to the training dataset (CSV) |
+| `test_file` |  | Path to the test dataset for prediction (CSV) |
+| `output_file` |  | Optional path to write results and tree structure |
 
 ### Input Format
 
@@ -167,6 +165,12 @@ Decision Trees are used across a wide range of domains:
 
 - Quinlan, J. R. (1986). Induction of decision trees. *Machine Learning*, 1(1), 81–106.
 - Breiman, L., Friedman, J., Stone, C. J., & Olshen, R. A. (1984). *Classification and Regression Trees.* CRC Press.
+
+---
+
+## Author
+
+**Faid Faisal** — [faidfaisal1@gmail.com](mailto:faidfaisal1@gmail.com)
 
 ---
 

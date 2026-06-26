@@ -83,9 +83,9 @@ g++ -std=c++11 -O2 -o decisiontree decision_tree.cpp
 
 | Argument | Required | Description |
 |:---|:---:|:---|
-| `training_file` |  | Path to the training dataset (CSV) |
-| `test_file` |  | Path to the test dataset for prediction (CSV) |
-| `output_file` |  | Optional path to write results and tree structure |
+| `training_file` | ✅ | Path to the training dataset (CSV) |
+| `test_file` | ✅ | Path to the test dataset for prediction (CSV) |
+| `output_file` | ❌ | Optional path to write results and tree structure |
 
 ### Input Format
 

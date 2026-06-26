@@ -1,92 +1,122 @@
-# Decision Tree Algorithm
+# Decision Tree Classifier
 
-An efficient implementation of the Decision Tree algorithm for classification and prediction tasks using machine learning techniques.
+> A lightweight C++ implementation of the Decision Tree algorithm for multi-class classification, supporting multiple splitting criteria and pruning.
+
+## Author
+
+**Faid Faisal** — [faidfaisal1@gmail.com](mailto:faidfaisal1@gmail.com)
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Algorithm](#algorithm)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Input Format](#input-format)
+  - [Example](#example)
+- [Output](#output)
+- [Project Structure](#project-structure)
+- [Applications](#applications)
+- [References](#references)
+
+---
 
 ## Overview
 
-This project implements a Decision Tree classifier, a powerful supervised learning algorithm that creates a tree-like model of decisions based on feature values. The algorithm recursively splits the dataset into subsets based on the most significant attributes, making it highly interpretable and effective for both classification and regression tasks.
+This project implements a Decision Tree classifier — a supervised learning algorithm that builds a tree-like model of decisions based on feature values. The tree is constructed by recursively partitioning the dataset on the most informative attributes, producing a model that is both highly interpretable and effective across a range of classification tasks.
+
+---
 
 ## Features
 
-- **Multiple Splitting Criteria**: Supports information gain, gain ratio, and Gini index for optimal feature selection
-- **Automated Tree Construction**: Builds decision trees using entropy-based splitting methods
-- **Pruning Capabilities**: Prevents overfitting through tree pruning techniques
-- **Multi-class Classification**: Supports classification problems with multiple target classes
-- **High Interpretability**: Generates human-readable decision rules from the trained model
+- **Multiple splitting criteria** — information gain, gain ratio, and Gini index
+- **Automated tree construction** — entropy-based recursive splitting
+- **Pruning support** — reduces overfitting via configurable pruning techniques
+- **Multi-class classification** — handles any number of target classes
+- **Human-readable output** — exports decision rules and tree structure in plain text
 
-## Algorithm Overview
+---
 
-The Decision Tree algorithm operates through the following steps:
+## Algorithm
 
-1. **Feature Selection**: Identifies the best attribute to split the data using information gain or Gini index
-2. **Tree Construction**: Recursively partitions the dataset to create branches and leaf nodes
-3. **Stopping Criteria**: Terminates splitting based on predefined conditions (max depth, min samples, purity)
-4. **Classification**: Traverses the tree from root to leaf to predict class labels for new instances
+The classifier is built in four stages:
 
-This approach creates an intuitive model that mimics human decision-making processes.
+1. **Feature selection** — selects the best attribute to split on using information gain or Gini index
+2. **Tree construction** — recursively partitions the dataset into branches and leaf nodes
+3. **Stopping criteria** — halts splitting based on max depth, minimum sample count, or node purity
+4. **Prediction** — traverses the tree from root to leaf to assign class labels to new instances
+
+---
 
 ## Prerequisites
 
-- C++ compiler with C++11 support or later (e.g., g++, clang++)
-- Standard Template Library (STL)
+- C++ compiler with **C++11** support or later (e.g., `g++`, `clang++`)
+- Standard Template Library (STL) — no external dependencies
+
+---
 
 ## Installation
 
 Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/decision-tree.git
 cd decision-tree
 ```
 
-Compile the program:
+Compile:
+
 ```bash
-g++ -std=c++11 -o decisiontree decision_tree.cpp -O2
+g++ -std=c++11 -O2 -o decisiontree decision_tree.cpp
 ```
+
+---
 
 ## Usage
 
-Run the Decision Tree algorithm on your dataset:
 ```bash
-./decisiontree   [output_file]
+./decisiontree <training_file> <test_file> [output_file]
 ```
 
 ### Parameters
 
-- `training_file`: Path to the training dataset file
-- `test_file`: Path to the test dataset file for prediction
-- `output_file`: (Optional) File to write the results and tree structure
+| Argument | Required | Description |
+|:---|:---:|:---|
+| `training_file` | ✅ | Path to the training dataset (CSV) |
+| `test_file` | ✅ | Path to the test dataset for prediction (CSV) |
+| `output_file` | ❌ | Optional path to write results and tree structure |
 
 ### Input Format
 
-The input files should be in CSV format with the last column as the class label:
+Input files must be **CSV** with feature names in the first row and the **class label in the last column**:
+
 ```
 feature1,feature2,feature3,class
 value1,value2,value3,classA
 value4,value5,value6,classB
 value7,value8,value9,classA
-...
 ```
 
-The first row should contain feature names, and subsequent rows contain data instances.
-
 ### Example
+
 ```bash
 ./decisiontree train.csv test.csv results.txt
 ```
 
-This command trains a decision tree on `train.csv`, predicts classes for `test.csv`, and writes the results to `results.txt`.
+Trains on `train.csv`, predicts labels for `test.csv`, and writes the full output to `results.txt`.
+
+---
 
 ## Output
 
-The program generates:
+The program produces three sections of output:
 
-1. **Decision Tree Structure**: Visual representation of the trained tree
-2. **Classification Results**: Predicted class labels for test instances
-3. **Performance Metrics**: Accuracy, precision, recall, and confusion matrix
-
-Sample output:
+**1. Tree structure**
 ```
-Decision Tree Structure:
 Root [feature1]
 ├── value <= threshold
 │   ├── [feature2]
@@ -94,8 +124,14 @@ Root [feature1]
 │   │   └── Leaf: ClassB
 └── value > threshold
     └── Leaf: ClassC
+```
 
+**2. Classification results** — predicted class label for each test instance
+
+**3. Performance metrics**
+```
 Test Accuracy: 92.5%
+
 Confusion Matrix:
          ClassA  ClassB  ClassC
 ClassA     45      2       1
@@ -103,47 +139,36 @@ ClassB      1     38      3
 ClassC      0      2      43
 ```
 
+---
+
 ## Project Structure
+
 ```
 decision-tree/
-├── decision_tree.cpp # Decision Tree algorithm implementation
-├── README.md         # This file
-└── examples/         # Sample datasets and outputs
+├── decision_tree.cpp   # Core algorithm implementation
+├── README.md           # This file
+└── examples/           # Sample datasets and expected outputs
 ```
+
+---
 
 ## Applications
 
-Decision Trees are widely used in:
+Decision Trees are used across a wide range of domains:
 
-- Medical diagnosis and healthcare predictions
+- Medical diagnosis and clinical prediction
 - Credit risk assessment and fraud detection
-- Customer segmentation and churn prediction
+- Customer segmentation and churn modeling
 - Image classification and pattern recognition
 - Feature importance analysis
 
-## Performance
-
-Decision Trees offer several advantages:
-
-- High interpretability and explainability
-- Handles both numerical and categorical data
-- Requires minimal data preprocessing
-- Fast training and prediction
-- Robust to outliers
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+---
 
 ## References
 
-- Quinlan, J. R. (1986). Induction of decision trees. *Machine Learning*, 1(1), 81-106.
-- Breiman, L., Friedman, J., Stone, C. J., & Olshen, R. A. (1984). *Classification and Regression Trees*. CRC press.
-
-## Author
-
-[Faid Faisal]  
-[faidfaisal1@gmail.com]  
-
+- Quinlan, J. R. (1986). Induction of decision trees. *Machine Learning*, 1(1), 81–106.
+- Breiman, L., Friedman, J., Stone, C. J., & Olshen, R. A. (1984). *Classification and Regression Trees.* CRC Press.
 
 ---
+
+*Licensed under the MIT License.*
